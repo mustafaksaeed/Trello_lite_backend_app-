@@ -10,6 +10,4 @@ router.post("/createproject", createProject);
 
 router.get("/", showProjects);
 
-
-
 export default router;

@@ -1,3 +1,8 @@
 import express from "../../app.js";
 
-const router = express.Router();
+const taskrouter = express.Router({ mergeParams: true });
+
+
+
+
+export default taskrouter;

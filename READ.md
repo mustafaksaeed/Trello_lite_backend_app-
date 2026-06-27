@@ -15,4 +15,3 @@ for nesting
 
 eg. 
 
-/project/
