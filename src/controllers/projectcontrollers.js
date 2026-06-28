@@ -18,3 +18,23 @@ export const showProjects = async () => {
 
   console.log(row.rows[0]);
 };
+
+export const showProject = async (req, res) => {
+  const projectid = parseInt(req.params.id);
+  const row = await db.query("SELECT * FROM projects WHERE projects_id= $1", [
+    projectid,
+  ]);
+
+  console.log(row.rows[0]);
+};
+
+export const deleteProject = async (req, res) => {
+  const projectid = parseInt(req.params.id);
+  const row = await db.query("DELETE FROM projects WHERE projects_id= $1", [
+    projectid,
+  ]);
+
+  res.status(201).send({
+    message: "project successfully deleted",
+  });
+};
