@@ -1,6 +1,6 @@
 import { db } from "../database/db.js";
 
-export const createProject = async (req, res) => {
+export const createProject = async () => {
   const { name, description } = req.body;
 
   await db.query("INSERT INTO projects (name,description) VALUES ($1,$2)", [
@@ -13,6 +13,8 @@ export const createProject = async (req, res) => {
   });
 };
 
-export const showProjects = async (req, res) => {
-  console.log("projects");
+export const showProjects = async () => {
+  const row = await db.query("SELECT * FROM projects");
+
+  console.log(row.rows[0]);
 };
