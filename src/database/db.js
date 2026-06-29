@@ -12,7 +12,7 @@ export const db = new Pool({
   database: process.env.DB_DATABASE,
 });
 
-db.on("error", (err, client) => {
+db.on("error", (err) => {
   console.error("Unexpected error on idle client", err);
   process.exit(-1);
 });

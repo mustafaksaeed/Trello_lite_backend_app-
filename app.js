@@ -9,7 +9,7 @@ app.use(express.json());
 app.use("/projects", router);
 const port = process.env.port;
 
-app.get("/", () => {
+app.get("/", (res) => {
   res.send("server is working ");
 });
 
